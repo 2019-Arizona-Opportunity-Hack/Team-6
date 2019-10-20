@@ -4,6 +4,11 @@ from pytrends.request import TrendReq
 import plotly.express as px
 import chart_studio.tools as tls
 
+from cachetools import cache, TTLCache, cached
+
+cache = TTLCache(maxsize=100, ttl=300)  # 2 - let's create the cache object.
+
+
 
 pytrends = TrendReq(hl='en-US', tz=360)
 def related(list1, list2): # find if the the 2 lists are related
@@ -22,6 +27,8 @@ def toLower(text): # make string to lowercase
 def removeSpecialChar(text): # get rid of special characters
     k = text.translate ({ord(c): " " for c in "!@#$%^&*()[]{};:,./<>?\|`~=_+"})
     return k
+
+@cached(cache)
 def findTrends(keywords):
     trending =[]
     df = pytrends.trending_searches(pn='united_states')
@@ -63,6 +70,6 @@ def findTopCharts(topic):
     print("HEllo")
     kw_list = [topic]
     pytrends.build_payload(kw_list, cat=0, timeframe='today 1-m', geo='', gprop='')
-    top = pytrends.top_charts('201910',hl='en-US', tz=300, geo='us')
+    top = pytrends.top_charts(date=2019,hl='en-US', tz=300, geo='us')
     return top
-#print(findTopCharts('movies'))
+print(findTopCharts('science'))
