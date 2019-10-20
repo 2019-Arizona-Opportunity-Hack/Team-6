@@ -10,7 +10,8 @@ app = Flask(__name__,
 
 @app.route('/')
 def index():
-    url = s.plotInterest("Star wars")
+    #url = s.plotInterest("Star wars")
+    url = "https://plot.ly/~ccharmander4/69"
     topTrends = "//plot.ly/~ccharmander4/57.embed"
     steam = st.plotSteam()
     return render_template("index.html", topTrend = topTrends, googleTrend = url, steamTrend = steam)
