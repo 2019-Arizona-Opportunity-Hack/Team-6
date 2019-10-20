@@ -12,5 +12,9 @@ def index():
 app.config['ENV']='development'
 app.config['DEBUG']=True
 
-app.run(host='0.0.0.0', port=3000,debug=True)
+import os
+
+port = int(os.environ.get('PORT',3000))
+
+app.run(host='0.0.0.0', port=port,debug=True)
 
