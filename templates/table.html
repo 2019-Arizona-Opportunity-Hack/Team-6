@@ -148,7 +148,7 @@
                             </div>
                         </div>
                         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                            <table class="table dataTable my-0" id="dataTable">
+                            <!--table class="table dataTable my-0" id="dataTable">
                                 <thead>
                                     <tr>
                                         <th>Pop Culture</th>
@@ -227,7 +227,10 @@
                                         <td><strong>Total Interactions</strong></td>
                                     </tr>
                                 </tfoot>
-                            </table>
+                            </table-->
+
+                            {{ table|safe }}
+
                         </div>
                         <div class="row">
                             <div class="col-md-6 align-self-center">

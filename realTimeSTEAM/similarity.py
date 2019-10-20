@@ -22,7 +22,7 @@ def findPercentage(keyword):
     j = response.body
     confidence = j[0]['classifications'][0] #['confidence']
     return confidence
-
+@cached(cache)
 def allPercentage():
     trend = s.findTrends("film")
     l = []

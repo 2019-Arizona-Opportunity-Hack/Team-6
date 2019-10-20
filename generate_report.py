@@ -60,7 +60,7 @@ def plotInterest(list):
     pytrends.build_payload(kw_list, cat=0, timeframe='today 1-m', geo='', gprop='')
     interest = pytrends.interest_over_time()
     df = interest[list]
-    print(df)
+    #print(df)
     x_axis = df.index.to_frame()
     #print(x_axis)
     # fig = px.line(df,x = x_axis['date'],  y=df)
@@ -79,4 +79,4 @@ def main():
     plotInterest(inp)
 
 
-main()
+plotInterest("starwars")
