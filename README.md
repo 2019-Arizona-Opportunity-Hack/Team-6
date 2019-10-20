@@ -1,6 +1,8 @@
 # Team-6
 
 This is the README!
+Check our DevPost: https://devpost.com/software/team-6-o75mv0
+Check our Google Docs: https://docs.google.com/document/d/1MafC12aU4MiPV6DqKCLREETcj_Xg8vasj542t2nObIo/edit?usp=sharing
 
 
 ## Inspiration
