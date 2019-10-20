@@ -7,6 +7,13 @@ This is the README!
 We were inspired by RealTeamSteam's (RTS) mission to educate adults with science, technology, engineering, and mathematics, or STEM, by bridging the gap between pop culture and STEM. RTS is currently spending loads of time manually researching for pop culture events and related STEM research in order to find content for educational presents at large conferences, such as Phoenix Fan Fusion (formerly Phoenix Comic Con).  After researching existing solutions and brainstorming together, we found there is a missing hole in research tools to find the intersection between STEM and trending pop culture. We can increase efficiency, accuracy, precision, and time management for research for all non-profits, educational platforms, and specialized research. 
 ## What it does
 We created a web application that it designed to search for the intersection between Pop culture and STEM articles. The application then does the following features:
+1. Create CSV file of raw data, data analytics, and dates with time stamps
+2. Easy deploy to Heroku button
+3. Search button for Pop Culture topics that searches for STEM topics
+4. Generate Analytics from Data
+5. Generate readible graphs from Data
+6. Display timeline of trending events
+7. Finding similarity index of Pop cutlure article with STEM topic
 
 ## How we built it
 For our beautiful visual demonstration, view our infrastructure diagram. We built a python application built in Flask framework that uses Python libraries Plotly, MonkeyLearn, Wikipedia, Pytrends and the Panda data frame to output analytics, visualization, and time trends. The python application mines from social media feeds such as Twitter, Twitch, Google Trends, YouTube, Steam, and other popular sources to get the relevant pop culture topics. From there, the application is deployed to Heroku with FusionAuth. Between the client and the server, there is a Sucuri firewall security layer.(which can be replaced with another recommended layer, see our thorough security documentation).
