@@ -13,12 +13,13 @@ def index():
     #url = s.plotInterest("Star wars")
     url = "https://plot.ly/~ccharmander4/69"
     topTrends = "//plot.ly/~ccharmander4/57.embed"
-    steam = st.plotSteam()
+    #steam = st.plotSteam()
+    steam = "https://plot.ly/~ccharmander4/80"
     return render_template("index.html", topTrend = topTrends, googleTrend = url, steamTrend = steam)
 
-@app.route('/table')
+""""@app.route('/table')
 def table():
-    return render_template("table.html", table=t.getTable())
+    return render_template("table.html", table=t.getTable())"""
 
 @app.route('/data')
 def data():
