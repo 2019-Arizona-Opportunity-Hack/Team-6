@@ -85,7 +85,7 @@ python-dateutil==2.6.0
 pytrends==4.7.1
 pytz==2016.10
 pywinpty==0.5.5
-PyYAML==5.1
+PyYAML==5.1.2
 pyzmq==18.1.0
 qtconsole==4.5.5
 requests==2.21.0
