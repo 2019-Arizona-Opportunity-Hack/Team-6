@@ -12,9 +12,9 @@ def index():
     steam = "https://plot.ly/~ccharmander4/80.embed"
     return render_template("index.html", topTrend = topTrends, googleTrend = url, steamTrend = steam)
 
-""""@app.route('/table')
+@app.route('/table')
 def table():
-    return render_template("table.html", table=t.getTable())"""
+    return render_template("table.html")
 
 @app.route('/data')
 def data():
