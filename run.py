@@ -4,6 +4,7 @@ app = Flask(__name__,
             static_folder='templates/assets')
 
 @app.route('/')
+@app.route('/index')
 def index():
     #url = s.plotInterest("Star wars")
     url = "https://plot.ly/~ccharmander4/69.embed"
@@ -22,14 +23,14 @@ def login():
 
 @app.route('/data')
 def data():
-    with open("outputs/Adjacency.csv") as fp:
+    with open("data.csv") as fp:
         csv = fp.read()
     #csv = '1,2,3\n4,5,6\n'
     return Response(
         csv,
         mimetype="text/csv",
         headers={"Content-disposition":
-                 "attachment; filename=data.csv"})
+                 "attachment; filename=data_trend.csv"})
 app.config['ENV']='development'
 app.config['DEBUG']=True
 
