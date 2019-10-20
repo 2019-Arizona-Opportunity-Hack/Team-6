@@ -1,14 +1,16 @@
 from flask import Flask, render_template
-#import steam as s
+import realTimeSTEAM.dataAnalysis as s
+import realTimeSTEAM.similarity as sim
 #from app import app
 
 app = Flask(__name__,
             static_folder='templates/assets')
 
 @app.route('/')
-#url = s.plotInterest("Star wars")
 def index():
-    return render_template("index.html", googleTrend = "https://plot.ly/~ccharmander4/5/.embed")
+    url = s.plotInterest("Star wars")
+    topTrends = "//plot.ly/~ccharmander4/57.embed"
+    return render_template("index.html", topTrend = topTrends, googleTrend = url)
 app.config['ENV']='development'
 app.config['DEBUG']=True
 

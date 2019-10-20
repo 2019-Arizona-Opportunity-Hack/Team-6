@@ -43,14 +43,14 @@ def embedPlotly(html):
     tls.get_embed(html)
 def plotInterest(list):
     kw_list = [list]
-    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    pytrends.build_payload(kw_list, cat=0, timeframe='today 1-m', geo='', gprop='')
     interest = pytrends.interest_over_time()
     df = interest[list]
     x_axis = df.index.to_frame()
     #print(x_axis)
     fig = px.line(df,x = x_axis['date'],  y=df)
-    py.iplot(fig, filename = 'starwars')
-    first_plot_url = py.plot(fig, filename='starwars', auto_open=False,)
+    py.iplot(fig, filename = 'timeline')
+    first_plot_url = py.plot(fig, filename='timeline', auto_open=False,)
 
     embedPlotly(first_plot_url)
     result = first_plot_url+".embed"
@@ -58,7 +58,11 @@ def plotInterest(list):
     """print(df)
     df1 = pytrends.suggestions("game")
     print(df1)"""
-#trending = findTrends(["film"])
-print(plotInterest("Star wars"))
 
-
+def findTopCharts(topic):
+    print("HEllo")
+    kw_list = [topic]
+    pytrends.build_payload(kw_list, cat=0, timeframe='today 1-m', geo='', gprop='')
+    top = pytrends.top_charts('201910',hl='en-US', tz=300, geo='us')
+    return top
+#print(findTopCharts('movies'))
