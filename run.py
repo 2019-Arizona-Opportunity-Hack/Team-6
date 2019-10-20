@@ -1,9 +1,4 @@
 from flask import Flask, render_template, Response
-import realTimeSTEAM.dataAnalysis as s
-import realTimeSTEAM.similarity as sim
-import realTimeSTEAM.table as t
-import steam as st
-#from app import app
 
 app = Flask(__name__,
             static_folder='templates/assets')
@@ -11,10 +6,10 @@ app = Flask(__name__,
 @app.route('/')
 def index():
     #url = s.plotInterest("Star wars")
-    url = "https://plot.ly/~ccharmander4/69"
+    url = "https://plot.ly/~ccharmander4/69.embed"
     topTrends = "//plot.ly/~ccharmander4/57.embed"
     #steam = st.plotSteam()
-    steam = "https://plot.ly/~ccharmander4/80"
+    steam = "https://plot.ly/~ccharmander4/80.embed"
     return render_template("index.html", topTrend = topTrends, googleTrend = url, steamTrend = steam)
 
 """"@app.route('/table')
