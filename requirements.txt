@@ -64,7 +64,6 @@ patsy==0.5.1
 pbr==1.10.0
 pickleshare==0.7.5
 Pillow==5.4.1
--e git+https://github.com/Project-Platypus/Platypus.git@723ad6763abff99b4f31305191b754c2c26867b0#egg=Platypus_Opt
 plotly==4.2.1
 plotly-express==0.4.1
 ply==3.11
@@ -122,5 +121,4 @@ virtualenvwrapper==4.7.2
 wcwidth==0.1.7
 webencodings==0.5.1
 Werkzeug==0.15.3
-Whoosh==2.7.4
 widgetsnbextension==3.5.1
