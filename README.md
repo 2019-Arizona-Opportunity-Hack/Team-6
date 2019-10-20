@@ -10,7 +10,7 @@ We created a web application that it designed to search for the intersection bet
 1. Create CSV file of raw data, data analytics, and dates with time stamps
 2. Easy deploy to Heroku button (one-click deploy from Heroku)
 3. Search button for Pop Culture topics that searches for STEM topics
-4. Generate Analytics from Data
+4. Generate Analytics from Data as well as summary data
 5. Generate readible graphs from Data
 6. Display timeline of trending events
 7. Finding similarity index of Pop cutlure article with STEM topic
