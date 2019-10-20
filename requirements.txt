@@ -54,7 +54,6 @@ networkx==1.11
 nltk==3.4.5
 notebook==6.0.1
 numexpr==2.7.0
-numpy==1.12.0
 opencv-python==4.1.1.26
 orca==1.5.1
 pandas==0.24.0
