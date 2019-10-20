@@ -4,14 +4,17 @@ import realTimeSTEAM.dataAnalysis as s
 import pandas as pd
 import plotly.express as px
 import chart_studio.plotly as py
+from cachetools import cache, TTLCache, cached
 
+cache = TTLCache(maxsize=100, ttl=300)  # 2 - let's create the cache object.
+@cached(cache)
 def findPercentage(keyword):
     s = wikipedia.search(keyword)
     result=wikipedia.page(s[0])
     #print(result.content)
-    ml = MonkeyLearn('f38c742c00e4f06a2442863e6fa13f0e6f13fc44')
+    ml = MonkeyLearn('700b30dfb9557ee50a4d71355a5e3d7ca43756c5')
     response = ml.classifiers.classify(
-        model_id='cl_LNaB7RwX',
+        model_id='cl_UdQMQW59',
         data=[
             result.content,
         ]

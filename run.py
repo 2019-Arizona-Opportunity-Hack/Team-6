@@ -11,6 +11,11 @@ def index():
     url = s.plotInterest("Star wars")
     topTrends = "//plot.ly/~ccharmander4/57.embed"
     return render_template("index.html", topTrend = topTrends, googleTrend = url)
+
+@app.route('/table')
+def table():
+    return render_template("table.html")
+
 app.config['ENV']='development'
 app.config['DEBUG']=True
 
