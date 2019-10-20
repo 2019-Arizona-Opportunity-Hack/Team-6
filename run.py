@@ -16,6 +16,10 @@ def index():
 def table():
     return render_template("table.html")
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
 @app.route('/data')
 def data():
     with open("outputs/Adjacency.csv") as fp:
