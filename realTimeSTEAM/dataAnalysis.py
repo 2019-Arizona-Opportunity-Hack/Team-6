@@ -62,7 +62,5 @@ def plotInterest(list):
     embedPlotly(first_plot_url)
     result = first_plot_url+".embed"
     return result
-    """print(df)
-    df1 = pytrends.suggestions("game")
-    print(df1)"""
+
 
