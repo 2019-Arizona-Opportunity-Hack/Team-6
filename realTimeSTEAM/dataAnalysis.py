@@ -66,10 +66,3 @@ def plotInterest(list):
     df1 = pytrends.suggestions("game")
     print(df1)"""
 
-def findTopCharts(topic):
-    print("HEllo")
-    kw_list = [topic]
-    pytrends.build_payload(kw_list, cat=0, timeframe='today 1-m', geo='', gprop='')
-    top = pytrends.top_charts(date=2019,hl='en-US', tz=300, geo='us')
-    return top
-print(findTopCharts('science'))

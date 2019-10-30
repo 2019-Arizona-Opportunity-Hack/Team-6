@@ -1,21 +1,36 @@
-from flask import Flask, render_template
-import realTimeSTEAM.dataAnalysis as s
-import realTimeSTEAM.similarity as sim
-#from app import app
+from flask import Flask, render_template, Response
 
 app = Flask(__name__,
             static_folder='templates/assets')
 
 @app.route('/')
+@app.route('/index')
 def index():
-    url = s.plotInterest("Star wars")
+    #url = s.plotInterest("Star wars")
+    url = "https://plot.ly/~ccharmander4/69.embed"
     topTrends = "//plot.ly/~ccharmander4/57.embed"
-    return render_template("index.html", topTrend = topTrends, googleTrend = url)
+    #steam = st.plotSteam()
+    steam = "https://plot.ly/~ccharmander4/80.embed"
+    return render_template("index.html", topTrend = topTrends, googleTrend = url, steamTrend = steam)
 
 @app.route('/table')
 def table():
     return render_template("table.html")
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
+@app.route('/data')
+def data():
+    with open("data.csv") as fp:
+        csv = fp.read()
+    #csv = '1,2,3\n4,5,6\n'
+    return Response(
+        csv,
+        mimetype="text/csv",
+        headers={"Content-disposition":
+                 "attachment; filename=data_trend.csv"})
 app.config['ENV']='development'
 app.config['DEBUG']=True
 
