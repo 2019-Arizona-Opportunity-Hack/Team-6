@@ -23,14 +23,14 @@ def plotTwitter():
 
     results = api.search(q=query, lang=language)
 
-    for tweet in results:
-        print tweet.user.screen_name, "Tweeted: ", tweet.text
+  #  for tweet in results:
+   #     print tweet.user.screen_name, "Tweeted: ", tweet.text
 
-    for tweet in public_tweets:
-        print tweet.text
-        print tweet.created_at
-        print tweet.user.screen_name
-        print tweet.user.location
+  #  for tweet in public_tweets:
+  #      print tweet.text
+  #      print tweet.created_at
+  #      print tweet.user.screen_name
+  #      print tweet.user.location
     
     fig = go.Figure(data=[go.Table(
         header=dict(values=['public_tweets'],
