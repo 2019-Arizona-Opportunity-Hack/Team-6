@@ -1,47 +1,54 @@
-import requests
-import lxml.html
-import pandas as pd
-import chart_studio.plotly as py
-import plotly.graph_objects as go
-import tweepy
-import realTimeSTEAM.dataAnalysis as d
+import numpy as np
+import matplotlib.pyplot as plt
+import re
+from twython import Twython
+from PIL import Image
+from wordcloud import WordCloud, STOPWORDS
+from IPython.display import Image as im
+def twitter_wordcloud(topic):
+    #Connect to Twitter
+    APP_KEY = "oRzHEj2WJ38N2nfAOA20SFrsP"
+    APP_SECRET = "9qGfPGM9KxDje3GiMLslThC3oHHmc9VWu368J6imV2NNJQcQ0q"
+    TWITTER_ACCESS_TOKEN = '1168919777940660224-aGUI9TmVvkg2Ll2VDUb6a5VDkCyeEb'
+    TWITTER_ACCESS_TOKEN_SECRET = 'l2Fdu6rNYGpTgomMvE5aBYWJmBPIv0bOQ8ui2oltrpWjJ'
+    twitter = Twython(app_key=APP_KEY,app_secret= APP_SECRET,oauth_token=TWITTER_ACCESS_TOKEN, oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
 
-def plotTwitter():
-    consumer_key= "Q0um0FyLCoKbHxEYX05PrUrRs"
-    consumer_secret = "aoDkrmtJE1oycLmtkgNcWhC00QVfcf7vvsXhzocplj5kig2XR0 "
-    access_token = "93130299-crrOgEkv4QECLKl52U0J863f1lvCNIY2tVK8UaECX"
-    access_token_secret = "gs7RjaLpxo9HYBeXUcgSt6tR3qMcoEbVdPJbsRlM0L9pB"
-    #setting access token and secret
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    #creating API object passing auth info
-    auth.set_access_token(access_token, access_token_secret)
-    api = tweepy.API(auth)
-    #public_tweets = api.home_timeline()
+    #Get tweets from topic
+    user_timeline=twitter.search(q=topic+" science", count=1000)
+    user_timeline= user_timeline["statuses"]
 
-    query = "Science"
-    language = "en"
+    #Extract textfields from tweets
+    raw_tweets = []
+    for tweets in user_timeline:
+        raw_tweets.append(tweets['text'])
 
-    results = api.search(q=query, lang=language)
+    #Create a string form of our list of text
+    raw_string = ''.join(raw_tweets)
+    no_links = re.sub(r'http\S+', '', raw_string)
+    no_unicode = re.sub(r"\\[a-z][a-z]?[0-9]+", '', no_links)
+    no_special_characters = re.sub('[^A-Za-z ]+', '', no_unicode)
 
-  #  for tweet in results:
-   #     print tweet.user.screen_name, "Tweeted: ", tweet.text
+    words = no_special_characters.split(" ")
+    words = [w for w in words if len(w) > 2]  # ignore a, an, be, ...
+    words = [w.lower() for w in words]
+    words = [w for w in words if w not in STOPWORDS]
+    words = [w for w in words if w != topic]
 
-  #  for tweet in public_tweets:
-  #      print tweet.text
-  #      print tweet.created_at
-  #      print tweet.user.screen_name
-  #      print tweet.user.location
-    
-    fig = go.Figure(data=[go.Table(
-        header=dict(values=['public_tweets'],
-                    line_color='darkslategray',
-                    fill_color='lightskyblue',
-                    align='left'),
-      
-    ])
-    py.iplot(fig, filename = 'twitterPlot')
-    first_plot_url = py.plot(fig, filename='twitterPlot', auto_open=False,)
+    mask = np.array(Image.open('circle.jpg'))
 
-    d.embedPlotly(first_plot_url)
-    result = first_plot_url+".embed"
-    return result
+    wc = WordCloud(background_color="white", max_words=2000, mask=mask)
+    clean_string = ','.join(words)
+    wc.generate(clean_string)
+
+    f = plt.figure(figsize=(50,50))
+    """f.add_subplot(1,2, 1)
+    plt.imshow(mask, cmap=plt.cm.gray, interpolation='bilinear')
+    plt.title('Original Stencil', size=40)
+    plt.axis("off")
+    f.add_subplot(1,2, 2)"""
+    plt.imshow(wc, interpolation='bilinear')
+    plt.title('Twitter Generated Cloud', size=50)
+    plt.axis("off")
+    plt.savefig("templates/assets/img/wordcloud.png")
+
+

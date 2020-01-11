@@ -32,11 +32,15 @@
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search your topic here" name="topic" method="GET">
+                                <div class="input-group-append"><button class="btn btn-primary py-0" type="submit"><i class="fas fa-search"></i></button></div>
                             </div>
                         </form>
-                        <ul class="nav navbar-nav flex-nowrap ml-auto">
+                        <form>
+                            <input type="text" name="topic">
+                            <input type="submit">
+                        </form>
+                        <!---ul class="nav navbar-nav flex-nowrap ml-auto">
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" role="menu" aria-labelledby="searchDropdown">
                                     <form class="form-inline mr-auto navbar-search w-100">
@@ -47,7 +51,7 @@
                                 </div>
                             </li>
                     </li>
-                    </ul>
+                    </ul--->
             </div>
             </nav>
             <div class="container-fluid">
@@ -121,12 +125,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div><iframe src="{{ topTrend }}" height="600" width="100%" frameborder="0" scrolling="no"></iframe></div>
+                                <div><img src="assets/img/wordcloud.png" alt="missing cloud" width="100%" height="100%"></div>
                             </div>
                         </div>
                     </div>
                    </div>
-                    <div class="col-xl-6">
+                    <!--div class="col-xl-6">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h6 class="text-primary font-weight-bold m-0">Trending Overtime (Google)</h6>
@@ -174,7 +178,7 @@
                             <div class="card-body">
                                 <div><iframe src="{{ steamTrend }}" height="500" width="500" frameborder="0" scrolling="no"></iframe></div>
 
-                        </div>
+                        </div--->
                     </div>
                 </div>
                     <div class="col-lg-6 col-xl-6 offset-xl-0 mb-4">

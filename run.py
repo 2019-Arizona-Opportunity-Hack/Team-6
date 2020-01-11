@@ -1,18 +1,26 @@
-from flask import Flask, render_template, Response
-
+from flask import Flask, render_template, Response, request
+import Twitter as tw
 app = Flask(__name__,
             static_folder='templates/assets')
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=["GET"])
+@app.route('/index',methods=["GET"])
 def index():
     #url = s.plotInterest("Star wars")
     url = "https://plot.ly/~ccharmander4/69.embed"
-    topTrends = "//plot.ly/~ccharmander4/57.embed"
     #steam = st.plotSteam()
     steam = "https://plot.ly/~ccharmander4/80.embed"
-    return render_template("index.html", topTrend = topTrends, googleTrend = url, steamTrend = steam)
+    if request.method=="GET":
+        text = request.form["topic"]
+        tw.twitter_wordcloud(text)
+    return render_template("index.html", googleTrend = url, steamTrend = steam)
 
+""""@app.route('/', methods=["GET"])
+def generate_wordcloud():
+    text = request.form["topic"]
+    tw.twitter_wordcloud(text)
+    return render_template("table.html")
+"""
 @app.route('/table')
 def table():
     return render_template("table.html")
