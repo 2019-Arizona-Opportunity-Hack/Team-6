@@ -87,4 +87,3 @@ def twitter_wordcloud(topic):
     plt.axis("off")
     plt.savefig("templates/assets/img/"+topic+".png")
 
-twitter_wordcloud("baby yoda")

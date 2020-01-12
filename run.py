@@ -33,14 +33,25 @@ def login():
 
 @app.route('/data')
 def data():
-    with open("data.csv") as fp:
+    with open("templates/assets/csv/twitter_report.csv", encoding='utf-8') as fp:
         csv = fp.read()
     #csv = '1,2,3\n4,5,6\n'
     return Response(
         csv,
         mimetype="text/csv",
         headers={"Content-disposition":
-                 "attachment; filename=data_trend.csv"})
+                 "attachment; filename=twitter_data_report.csv"})
+
+@app.route('/data2')
+def data2():
+    with open("templates/assets/csv/words_frequency.csv", encoding='utf-8') as fp:
+        csv = fp.read()
+    #csv = '1,2,3\n4,5,6\n'
+    return Response(
+        csv,
+        mimetype="text/csv",
+        headers={"Content-disposition":
+                 "attachment; filename=context_words_frequency.csv"})
 app.config['ENV']='development'
 app.config['DEBUG']=True
 
