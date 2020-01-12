@@ -49,6 +49,6 @@ def twitter_wordcloud(topic):
     plt.imshow(wc, interpolation='bilinear')
     plt.title('Twitter Generated Cloud', size=50)
     plt.axis("off")
-    plt.savefig("templates/assets/img/wordcloud.png")
+    plt.savefig("templates/assets/img/"+topic+".png")
 
 

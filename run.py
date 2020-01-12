@@ -1,26 +1,34 @@
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response, request, flash
 import Twitter as tw
 app = Flask(__name__,
             static_folder='templates/assets')
 
 @app.route('/', methods=["GET"])
-@app.route('/index',methods=["GET"])
+@app.route('/index', methods=["GET"])
 def index():
-    #url = s.plotInterest("Star wars")
+    error = None
     url = "https://plot.ly/~ccharmander4/69.embed"
-    #steam = st.plotSteam()
+        #steam = st.plotSteam()
     steam = "https://plot.ly/~ccharmander4/80.embed"
-    if request.method=="GET":
-        text = request.form["topic"]
-        tw.twitter_wordcloud(text)
-    return render_template("index.html", googleTrend = url, steamTrend = steam)
+    try:
+        #if request.method == "GET":
+            text = request.args.get("topic")
+            tw.twitter_wordcloud(text)
+            img = "assets/img/"+text+".png"
+            return render_template("index.html", googleTrend = url, steamTrend = steam, img_source = img)
 
-""""@app.route('/', methods=["GET"])
+    except Exception as e:
+        #flash(e)
+        #url = s.plotInterest("Star wars")
+
+        return render_template("index.html", googleTrend = url, steamTrend = steam)
+
+@app.route('/', methods=["GET"])
 def generate_wordcloud():
     text = request.form["topic"]
     tw.twitter_wordcloud(text)
     return render_template("table.html")
-"""
+
 @app.route('/table')
 def table():
     return render_template("table.html")
