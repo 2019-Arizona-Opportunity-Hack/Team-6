@@ -6,10 +6,10 @@ from PIL import Image
 from wordcloud import WordCloud, STOPWORDS
 from IPython.display import Image as im
 import csv
-def json_to_csv(json_data, name):
+def json_to_csv(json_data):
     emp_data = json_data
     # open a file for writing
-    employ_data = open(name+".csv", 'w+', encoding="utf-8")
+    employ_data = open("templates/assets/csv/twitter_report.csv", 'w+', encoding="utf-8")
     # create the csv writer object
     csvwriter = csv.writer(employ_data)
     count = 0
@@ -37,7 +37,7 @@ def CountFrequency(my_list):
         else:
             freq[item] = 1
 
-    with open('mycsvfile.csv', 'w+') as f:  # Just use 'w' mode in 3.x
+    with open('templates/assets/csv/words_frequency.csv', 'w+') as f:  # Just use 'w' mode in 3.x
         w = csv.DictWriter(f, freq.keys())
         w.writeheader()
         w.writerow(freq)
@@ -52,7 +52,7 @@ def twitter_wordcloud(topic):
     #Get tweets from topic
     user_timeline=twitter.search(q=topic+" science", count=1000)
     user_timeline= user_timeline["statuses"]
-    json_to_csv(user_timeline, topic)
+    json_to_csv(user_timeline)
     #Extract textfields from tweets
     raw_tweets = []
     for tweets in user_timeline:
@@ -87,4 +87,4 @@ def twitter_wordcloud(topic):
     plt.axis("off")
     plt.savefig("templates/assets/img/"+topic+".png")
 
-twitter_wordcloud("star wars")
+twitter_wordcloud("baby yoda")

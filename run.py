@@ -11,7 +11,6 @@ def index():
         #steam = st.plotSteam()
     steam = "https://plot.ly/~ccharmander4/80.embed"
     try:
-        #if request.method == "GET":
             text = request.args.get("topic")
             tw.twitter_wordcloud(text)
             img = "assets/img/"+text+".png"
@@ -23,11 +22,6 @@ def index():
 
         return render_template("index.html", googleTrend = url, steamTrend = steam)
 
-@app.route('/', methods=["GET"])
-def generate_wordcloud():
-    text = request.form["topic"]
-    tw.twitter_wordcloud(text)
-    return render_template("table.html")
 
 @app.route('/table')
 def table():

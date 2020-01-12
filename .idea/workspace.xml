@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7692f3bc-a7bf-41e5-872e-0f30e815582e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/assets/img/death star.png" afterPath="$PROJECT_DIR$/templates/assets/img/death star.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/assets/img/star wars.png" afterPath="$PROJECT_DIR$/templates/assets/img/star wars.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Twitter.py" afterPath="$PROJECT_DIR$/Twitter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="506">
+              <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
               <folding>
                 <element signature="e#0#66#0" expanded="true" />
               </folding>
@@ -32,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Twitter.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Twitter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Twitter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+            <state relative-caret-position="1958">
+              <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -44,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mycsvfile.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mycsvfile.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mycsvfile.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -121,13 +120,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="62" column="62" lean-forward="false" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
+            <state relative-caret-position="17">
+              <caret line="61" column="62" lean-forward="false" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
               <folding>
-                <marker date="1578856360722" expanded="true" signature="4027:4032" ph="..." />
-                <marker date="1578856360722" expanded="true" signature="4027:4055" ph="..." />
-                <marker date="1578856360722" expanded="true" signature="4566:4713" ph="..." />
-                <marker date="1578856360722" expanded="false" signature="8343:8395" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="4027:4032" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="4027:4055" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="4561:4586" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="4561:4609" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="4635:9612" ph="..." />
+                <marker date="1578858908972" expanded="false" signature="8189:8241" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="9733:9760" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="9865:10041" ph="..." />
+                <marker date="1578858908972" expanded="true" signature="9909:10023" ph="..." />
               </folding>
             </state>
           </provider>
@@ -299,6 +303,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dogs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Team-6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Team-6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="csv" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -673,10 +699,15 @@
         <state relative-caret-position="484">
           <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="62" />
           <folding>
-            <marker date="1578856360722" expanded="true" signature="4027:4032" ph="..." />
-            <marker date="1578856360722" expanded="true" signature="4027:4055" ph="..." />
-            <marker date="1578856360722" expanded="true" signature="4566:4713" ph="..." />
-            <marker date="1578856360722" expanded="false" signature="8343:8395" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4027:4032" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4027:4055" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4561:4586" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4561:4609" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4635:9612" ph="..." />
+            <marker date="1578858908972" expanded="false" signature="8189:8241" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="9733:9760" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="9865:10041" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="9909:10023" ph="..." />
           </folding>
         </state>
       </provider>
@@ -914,23 +945,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="62" column="62" lean-forward="false" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
+        <state relative-caret-position="17">
+          <caret line="61" column="62" lean-forward="false" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
           <folding>
-            <marker date="1578856360722" expanded="true" signature="4027:4032" ph="..." />
-            <marker date="1578856360722" expanded="true" signature="4027:4055" ph="..." />
-            <marker date="1578856360722" expanded="true" signature="4566:4713" ph="..." />
-            <marker date="1578856360722" expanded="false" signature="8343:8395" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <marker date="1578858908972" expanded="true" signature="4027:4032" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4027:4055" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4561:4586" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4561:4609" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="4635:9612" ph="..." />
+            <marker date="1578858908972" expanded="false" signature="8189:8241" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="9733:9760" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="9865:10041" ph="..." />
+            <marker date="1578858908972" expanded="true" signature="9909:10023" ph="..." />
           </folding>
         </state>
       </provider>
@@ -943,21 +969,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Twitter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mycsvfile.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Twitter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
