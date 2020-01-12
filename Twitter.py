@@ -5,6 +5,42 @@ from twython import Twython
 from PIL import Image
 from wordcloud import WordCloud, STOPWORDS
 from IPython.display import Image as im
+import csv
+def json_to_csv(json_data, name):
+    emp_data = json_data
+    # open a file for writing
+    employ_data = open(name+".csv", 'w+', encoding="utf-8")
+    # create the csv writer object
+    csvwriter = csv.writer(employ_data)
+    count = 0
+
+    for emp in emp_data:
+
+          if count == 0:
+
+                 header = emp.keys()
+
+                 csvwriter.writerow(header)
+
+                 count += 1
+
+          csvwriter.writerow(emp.values())
+
+    employ_data.close()
+def CountFrequency(my_list):
+
+    # Creating an empty dictionary
+    freq = {}
+    for item in my_list:
+        if (item in freq):
+            freq[item] += 1
+        else:
+            freq[item] = 1
+
+    with open('mycsvfile.csv', 'w+') as f:  # Just use 'w' mode in 3.x
+        w = csv.DictWriter(f, freq.keys())
+        w.writeheader()
+        w.writerow(freq)
 def twitter_wordcloud(topic):
     #Connect to Twitter
     APP_KEY = "oRzHEj2WJ38N2nfAOA20SFrsP"
@@ -16,7 +52,7 @@ def twitter_wordcloud(topic):
     #Get tweets from topic
     user_timeline=twitter.search(q=topic+" science", count=1000)
     user_timeline= user_timeline["statuses"]
-
+    json_to_csv(user_timeline, topic)
     #Extract textfields from tweets
     raw_tweets = []
     for tweets in user_timeline:
@@ -33,7 +69,7 @@ def twitter_wordcloud(topic):
     words = [w.lower() for w in words]
     words = [w for w in words if w not in STOPWORDS]
     words = [w for w in words if w != topic]
-
+    CountFrequency(words)
     mask = np.array(Image.open('circle.jpg'))
 
     wc = WordCloud(background_color="white", max_words=2000, mask=mask)
@@ -47,8 +83,8 @@ def twitter_wordcloud(topic):
     plt.axis("off")
     f.add_subplot(1,2, 2)"""
     plt.imshow(wc, interpolation='bilinear')
-    plt.title('Twitter Generated Cloud', size=50)
+    plt.title('Generated Cloud', size=50)
     plt.axis("off")
     plt.savefig("templates/assets/img/"+topic+".png")
 
-
+twitter_wordcloud("star wars")
