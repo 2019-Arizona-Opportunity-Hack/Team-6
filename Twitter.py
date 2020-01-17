@@ -50,7 +50,7 @@ def twitter_wordcloud(topic):
     twitter = Twython(app_key=APP_KEY,app_secret= APP_SECRET,oauth_token=TWITTER_ACCESS_TOKEN, oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
 
     #Get tweets from topic
-    user_timeline=twitter.search(q=topic+" science", count=1000)
+    user_timeline=twitter.search(q=topic, count=1000)
     user_timeline= user_timeline["statuses"]
     json_to_csv(user_timeline)
     #Extract textfields from tweets
